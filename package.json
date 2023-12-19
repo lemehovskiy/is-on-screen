@@ -1,0 +1,62 @@
+{
+  "name": "@lemehovskiy/is-on-screen",
+  "version": "0.0.1",
+  "description": "VanillaJS plugin for detecting if an element is on the screen",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/is-on-screen.umd.js",
+  "module": "./dist/is-on-screen.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/is-on-screen.mjs",
+      "require": "./dist/is-on-screen.umd.js"
+    }
+  },
+  "scripts": {
+    "start": "tsc && vite build --watch",
+    "build": "tsc && vite build",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint src/ --ext .ts --max-warnings=0",
+    "lint:prettier": "prettier 'src/**/*.ts' --check",
+    "fix": "npm run fix:prettier && npm run fix:eslint",
+    "fix:eslint": "eslint src/ --ext .ts --fix --max-warnings=0",
+    "fix:prettier": "prettier 'src/**/*.ts' --write",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lemehovskiy/is-on-screen"
+  },
+  "author": "lemehovskiy <lemehovskiy@gmail.com> (https://github.com/lemehovskiy)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lemehovskiy/is-on-screen/issues"
+  },
+  "homepage": "https://github.com/lemehovskiy/is-on-screen",
+  "keywords": [
+    "scroll",
+    "visibility",
+    "plugin",
+    "javascript",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.6",
+    "vite-plugin-dts": "^3.6.4"
+  }
+}
